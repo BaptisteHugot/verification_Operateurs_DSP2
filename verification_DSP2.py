@@ -60,12 +60,12 @@ for num in range(0, len(data)):
                     dataDescription = dataDescription + " / Agent prestataire de services de paiement"
                 else:
                     dataDescription = "Agent prestataire de services de paiement"
-                    existingData = 1
+                existingData = 2
 
             if "mandates" in dataRegafi["data"][0]: # Si la société a un mandataire, elle est également un agent de paiement
                 if existingData == 1:
                     dataDescription = dataDescription + " / Agent prestataire de services de paiement"
-                else:
+                elif existingData == 0:
                     dataDescription = "Agent prestataire de services de paiement"
 
             dataCompleted["Description"].append(dataDescription)
